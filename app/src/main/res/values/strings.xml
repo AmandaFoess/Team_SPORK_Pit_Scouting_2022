@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Team SPORK Pit Scouting</string>
+    <string name="team_spork_3196">Team SPORK #3196</string>
+    <string name="name">Student Name:</string>
+    <string name="team_information">Team Information</string>
+    <string name="team_number">Team Number:</string>
+    <string name="pit_number">Pit Number:</string>
+    <string name="robot_information">Robot Information</string>
+    <string name="height_of_robot">Height (Inches)</string>
+    <string name="weight_of_robot">Weight (lbs)</string>
+    <string name="drivetrain_information">Drivetrain Information</string>
+    <string name="drivetrain_type">Drivetrain Type:</string>
+    <string name="order_of_wheels">Order of Wheels:</string>
+    <string name="powercell_strategy">Powercell Strategy</string>
+    <string name="text_powercell_question">How many powercells can the robot hold?</string>
+    <string name="text_pickup_capability_question">Powercell Pickup Location Capability:</string>
+    <string name="text_pickup_preferability_question">Powercell Pickup Location Preferability:</string>
+    <string name="text_wheel_number_question"># of Wheels:</string>
+    <string name="text_shooting_capability_question">Powercell Shooting Capability:</string>
+    <string name="text_shooting_preferability_question">Powercell Shooting Preferability:</string>
+    <string name="endgame_strategy">Endgame Strategy</string>
+    <string name="engame_question">Endgame Strategy</string>
+    <string name="engame_comment">Describe Endgame Strategy (Optional)</string>
+    <string name="autonomous_strategy">Autonomous Strategy</string>
+    <string name="autonomous_comment">Describe Autonomous Strategy</string>
+    <string name="additional_comment">Additional Comments (Optional)</string>
+    <string name="additional_information">Additional Information</string>
+    <string name="submit_pit_data">~ Submit Pit Data ~</string>
+</resources>
