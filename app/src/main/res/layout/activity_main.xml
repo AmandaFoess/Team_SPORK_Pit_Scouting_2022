@@ -7,29 +7,6 @@
     android:background="#404040"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif"
-        android:text="@string/team_spork_3196"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="40sp"
-        app:layout_constraintBottom_toBottomOf="@id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/imageView" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="122dp"
-        android:layout_height="89dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/spork_logo"
-        android:contentDescription="TODO" />
-
     <View
         android:id="@+id/horizontal_space"
         android:layout_width="match_parent"
@@ -38,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/vertical_space"
@@ -81,7 +58,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/powercell_shooting_preferability_dropdown" />
+        app:layout_constraintTop_toBottomOf="@+id/endgame_comment" />
 
     <View
         android:id="@+id/half_horizontal_space3"
@@ -92,7 +69,7 @@
         app:layout_constraintEnd_toEndOf="@id/vertical_space"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextWeightRobot" />
+        app:layout_constraintTop_toBottomOf="@+id/weight_editText" />
 
     <View
         android:id="@+id/vertical_space_team_information"
@@ -111,7 +88,7 @@
         android:text="@string/team_information"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toStartOf="@+id/vertical_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
@@ -124,7 +101,7 @@
         android:text="@string/robot_information"
         android:gravity="center"
         android:textColor="@color/white"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
@@ -134,19 +111,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/name"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_information" />
+        app:layout_constraintBottom_toBottomOf="@+id/name_editText" />
 
     <EditText
         android:id="@+id/name_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:importantForAutofill="no"
@@ -164,19 +140,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/team_number"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/student_name_text" />
+        app:layout_constraintBottom_toBottomOf="@+id/team_number_editText" />
 
     <EditText
         android:id="@+id/team_number_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:autofillHints=""
         android:ems="10"
@@ -194,19 +169,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/pit_number"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/team_number_text" />
+        app:layout_constraintBottom_toBottomOf="@+id/pit_number_editText" />
 
     <EditText
         android:id="@+id/pit_number_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:importantForAutofill="no"
@@ -219,29 +193,28 @@
         app:layout_constraintTop_toBottomOf="@+id/team_number_editText"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextHeightRobot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/height_of_robot"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/robot_information"
+        app:layout_constraintBottom_toBottomOf="@+id/height_editText"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/height_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:importantForAutofill="no"
@@ -254,29 +227,28 @@
         app:layout_constraintTop_toBottomOf="@+id/robot_information"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextWeightRobot"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:ems="10"
         android:hint="@string/weight_of_robot"
         android:importantForAutofill="no"
         android:inputType="numberDecimal"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_team_information"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextHeightRobot"
+        app:layout_constraintBottom_toBottomOf="@+id/weight_editText"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
         android:id="@+id/weight_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:importantForAutofill="no"
@@ -310,8 +282,8 @@
         android:background="#C9FF0000"
         android:text="@string/drivetrain_information"
         android:gravity="center"
-        android:textColor="grey"
-        android:textSize="30sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/vertical_space"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
@@ -330,19 +302,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/drivetrain_type"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_drivetrain"
         app:layout_constraintStart_toEndOf="@id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/team_information" />
+        app:layout_constraintBottom_toBottomOf="@+id/drivetrain_editText" />
 
     <EditText
         android:id="@+id/drivetrain_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:importantForAutofill="no"
@@ -360,24 +331,24 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/text_wheel_number_question"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_drivetrain"
         app:layout_constraintStart_toEndOf="@id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/order_wheels_text" />
+        app:layout_constraintBottom_toBottomOf="@+id/wheelNumber_editText" />
 
 
     <EditText
         android:id="@+id/wheelNumber_editText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
+        android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/vertical_space_drivetrain"
         app:layout_constraintTop_toBottomOf="@+id/editTextOrderOfWheels" />
@@ -387,19 +358,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginBottom="10dp"
         android:text="@string/order_of_wheels"
         android:textColor="@color/white"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space_drivetrain"
         app:layout_constraintStart_toEndOf="@id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/drivetrain_text" />
+        app:layout_constraintBottom_toBottomOf="@+id/editTextOrderOfWheels" />
 
     <EditText
         android:id="@+id/editTextOrderOfWheels"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:layout_marginEnd="10dp"
         android:ems="10"
         android:importantForAutofill="no"
@@ -420,7 +390,7 @@
         android:text="@string/powercell_strategy"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/vertical_space"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
@@ -433,21 +403,19 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:text="@string/text_powercell_question"
-        android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf=""
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/vertical_space"
         app:layout_constraintTop_toBottomOf="@+id/powercell_strategy" />
 
     <TextView
-        android:id="@+id/textPowercellPickupCapability"
+        android:id="@+id/textPowercellPickupLocation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/text_pickup_capability_question"
+        android:text="@string/text_pickup_location_question"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -456,7 +424,7 @@
         app:layout_constraintTop_toBottomOf="@+id/powercell_number_dropdown" />
 
     <Spinner
-        android:id="@+id/powercell_capability_dropdown"
+        android:id="@+id/powercell_pickup_location_dropdown"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -466,7 +434,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/textPowercellPickupCapability"
+        app:layout_constraintTop_toBottomOf="@+id/textPowercellPickupLocation"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
@@ -474,19 +442,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/text_pickup_preferability_question"
+        android:text="@string/text_shooting_location_question"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/powercell_capability_dropdown" />
+        app:layout_constraintTop_toBottomOf="@+id/powercell_pickup_location_dropdown" />
 
     <Spinner
-        android:id="@+id/powercell_pickup_preferability_dropdown"
+        android:id="@+id/powercell_shooting_location_dropdown"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -504,19 +471,18 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
-        android:text="@string/text_shooting_capability_question"
+        android:text="@string/text_shooting_hub"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/powercell_pickup_preferability_dropdown" />
+        app:layout_constraintTop_toBottomOf="@+id/powercell_shooting_location_dropdown" />
 
     <Spinner
-        android:id="@+id/powercell_shooting_capability_dropdown"
+        android:id="@+id/powercell_shooting_hub_dropdown"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -530,36 +496,6 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textPowercellShootingPreferability"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
-        android:text="@string/text_shooting_preferability_question"
-        android:textAlignment="textStart"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/powercell_shooting_capability_dropdown" />
-
-    <Spinner
-        android:id="@+id/powercell_shooting_preferability_dropdown"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:minHeight="48dp"
-        android:spinnerMode="dropdown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/vertical_space"
-        app:layout_constraintTop_toBottomOf="@+id/textPowercellShootingPreferability"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
         android:id="@+id/endgame_strategy"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -567,7 +503,7 @@
         android:text="@string/endgame_strategy"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toStartOf="@+id/vertical_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/half_horizontal_space1" />
@@ -582,7 +518,7 @@
         android:text="@string/engame_question"
         android:gravity="left"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/endgame_strategy" />
@@ -613,7 +549,7 @@
         android:inputType="textMultiLine"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/endgame_dropdown" />
@@ -626,7 +562,7 @@
         android:text="@string/autonomous_strategy"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toStartOf="@+id/vertical_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/half_horizontal_space3" />
@@ -645,7 +581,7 @@
         android:inputType="textMultiLine"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@id/vertical_space"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/autonomous_strategy" />
@@ -664,7 +600,7 @@
         android:inputType="textMultiLine"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/additional_information" />
@@ -677,7 +613,7 @@
         android:text="@string/additional_information"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontal_space4" />
