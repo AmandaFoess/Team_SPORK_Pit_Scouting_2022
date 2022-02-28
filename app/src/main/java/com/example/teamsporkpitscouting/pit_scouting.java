@@ -27,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
+public class pit_scouting extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     Button submit_button;
     EditText student_name, team_number, pit_number, robot_height, robot_weight, autonomous_strategy_comment, endgame_strategy_comment, drivetrain_type, order_of_wheels, number_of_wheels, additional_comments;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.pit_scouting);
 
         submit_button = findViewById(R.id.submit_button);
         submit_button.setOnClickListener(this);
@@ -71,8 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cargo_pickup_location_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_pickup_location_spinner_category = new ArrayList<>();
+        cargo_pickup_location_spinner_category.add("Does not pick up");
         cargo_pickup_location_spinner_category.add("Human PLayer Station");
         cargo_pickup_location_spinner_category.add("On the Field");
+        cargo_pickup_location_spinner_category.add("Picks Up Anywhere");
 
         ArrayAdapter<String> array_adapter_cargo_pickup_location_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cargo_pickup_location_spinner_category);
         array_adapter_cargo_pickup_location_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -83,9 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cargo_shoot_location_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_shoot_location_spinner_category = new ArrayList<>();
-        cargo_shoot_location_spinner_category.add("Human PLayer Station");
+        cargo_pickup_location_spinner_category.add("Does Not Shoot");
+        cargo_shoot_location_spinner_category.add("Human Player Station");
         cargo_shoot_location_spinner_category.add("Launch Pad");
         cargo_shoot_location_spinner_category.add("Tarmac");
+        cargo_pickup_location_spinner_category.add("Shoots Anywhere");
 
         ArrayAdapter<String> array_adapter_cargo_shoot_location_spinner= new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cargo_shoot_location_spinner_category);
         array_adapter_cargo_shoot_location_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -96,15 +100,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         cargo_shoot_location_hub_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_shoot_location_hub_spinner_category = new ArrayList<>();
+        cargo_shoot_location_hub_spinner_category.add("Does Not Shoot");
         cargo_shoot_location_hub_spinner_category.add("Lower Hub");
         cargo_shoot_location_hub_spinner_category.add("Upper Hub");
+        cargo_shoot_location_hub_spinner_category.add("Shoots Anywhere");
 
         ArrayAdapter<String> array_adapter_cargo_shoot_location_hub_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cargo_shoot_location_hub_spinner_category);
         array_adapter_cargo_shoot_location_hub_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cargo_shoot_location_hub_spinner.setAdapter(array_adapter_cargo_shoot_location_hub_spinner);
     }
-
-
 
     @Override
     public void onClick(View v) {
@@ -120,8 +124,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onResponse(String response) {
                         loading.dismiss();
-                        Toast.makeText(MainActivity.this,response,Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        Toast.makeText(pit_scouting.this,response,Toast.LENGTH_LONG).show();
+                        Intent intent = new Intent(getApplicationContext(),pit_scouting.class);
                         startActivity(intent);
                     }
                 },

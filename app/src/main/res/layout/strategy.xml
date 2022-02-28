@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#404040"
+    tools:context=".strategy">
+
+    <View
+        android:id="@+id/vertical_space2"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/red_penalty_max"
+        app:layout_constraintStart_toEndOf="@+id/teleop_period_title"
+        app:layout_constraintTop_toBottomOf="@+id/end_of_match_title" />
+
+    <Switch
+        android:id="@+id/disable_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/disabled"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/broken_switch" />
+
+    <Switch
+        android:id="@+id/broken_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/broken"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/climber_dropdown" />
+
+    <TextView
+        android:id="@+id/red_total_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/red_total_points"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_left"
+        app:layout_constraintStart_toEndOf="@id/red_left"
+        app:layout_constraintBottom_toBottomOf="@id/red_total_points_editText" />
+
+    <EditText
+        android:id="@+id/red_total_points_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_left"
+        app:layout_constraintTop_toBottomOf="@+id/end_of_match_title" />
+
+    <TextView
+        android:id="@+id/blue_total_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/blue_total_points"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintStart_toEndOf="@id/blue_left"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space_right"
+        app:layout_constraintBottom_toBottomOf="@id/red_total_points_editText" />
+
+    <EditText
+        android:id="@+id/blue_total_points_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_right"
+        app:layout_constraintTop_toBottomOf="@+id/end_of_match_title" />
+
+
+    <TextView
+        android:id="@+id/red_penalty_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:text="@string/enter_red_penalty_pts"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_space"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/red_left"
+        app:layout_constraintTop_toBottomOf="@id/red_total_points" />
+
+    <Button
+        android:id="@+id/red_penalty_min"
+        android:layout_width="92dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/minus_sign"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/red_left"
+        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
+
+    <TextView
+        android:id="@+id/red_penaltY_points_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/red_penalty_max"
+        app:layout_constraintEnd_toStartOf="@+id/red_penalty_max"
+        app:layout_constraintStart_toEndOf="@+id/red_penalty_min"
+        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
+
+    <Button
+        android:id="@+id/red_penalty_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/plus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleop_period_title"
+        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
+
+    <TextView
+        android:id="@+id/blue_penalty_points"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/border"
+        android:text="@string/enter_blue_penalty_pts"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/blue_left"
+        app:layout_constraintTop_toTopOf="@id/red_penalty_points" />
+
+    <Button
+        android:id="@+id/blue_penalty_min"
+        android:layout_width="92dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/minus_sign"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/blue_left"
+        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points" />
+
+    <TextView
+        android:id="@+id/blue_penalty_points_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/blue_penalty_max"
+        app:layout_constraintEnd_toStartOf="@+id/blue_penalty_max"
+        app:layout_constraintStart_toEndOf="@+id/blue_penalty_min"
+        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points" />
+
+    <Button
+        android:id="@+id/blue_penalty_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/plus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points" />
+
+    <TextView
+        android:id="@+id/teleop_text2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/border"
+        android:text="@string/cargo_in_upper_hub"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleop_period_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_cargo_lower_min3" />
+
+    <Button
+        android:id="@+id/teleop_cargo_upper_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/minus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_text2" />
+
+    <Button
+        android:id="@+id/teleop_cargo_upper_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/plus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleop_period_title"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_text2" />
+
+    <TextView
+        android:id="@+id/teleop_cargo_upper_hub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/vertical_space"
+        app:layout_constraintEnd_toStartOf="@+id/teleop_cargo_upper_max"
+        app:layout_constraintStart_toEndOf="@+id/teleop_cargo_upper_min"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_text2" />
+
+    <Button
+        android:id="@+id/auto_cargo_lower_min3"
+        android:layout_width="92dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="10dp"
+        android:text="@string/minus_sign"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="@android:color/black"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_text" />
+
+    <TextView
+        android:id="@+id/teleop_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/border"
+        android:text="@string/cargo_in_lower_hub"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleop_period_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_period_title" />
+
+    <Button
+        android:id="@+id/teleop_cargo_lower_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/plus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/teleop_period_title"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_text" />
+
+    <TextView
+        android:id="@+id/teleop_cargo_lower_hub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/teleop_text2"
+        app:layout_constraintEnd_toStartOf="@+id/teleop_cargo_lower_max"
+        app:layout_constraintStart_toEndOf="@+id/auto_cargo_lower_min3"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_text" />
+
+    <Button
+        android:id="@+id/auto_cargo_upper_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/minus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/auto_text2" />
+
+    <Button
+        android:id="@+id/auto_cargo_upper_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/plus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_text2" />
+
+    <TextView
+        android:id="@+id/auto_cargo_upper_hub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_space2"
+        app:layout_constraintEnd_toStartOf="@+id/auto_cargo_upper_max"
+        app:layout_constraintStart_toEndOf="@+id/auto_cargo_upper_min"
+        app:layout_constraintTop_toBottomOf="@+id/auto_text2" />
+
+    <TextView
+        android:id="@+id/match_information"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="@string/match_information"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
+
+    <TextView
+        android:id="@+id/auto_period_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="@string/auto_period"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
+
+    <TextView
+        android:id="@+id/teleop_period_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="@string/teleop_period"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
+
+    <TextView
+        android:id="@+id/endgame_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="@string/end_game"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
+
+    <TextView
+        android:id="@+id/end_of_match_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="@string/end_of_match"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space3" />
+
+    <TextView
+        android:id="@+id/color"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/color"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/color_dropdown"
+        app:layout_constraintBottom_toBottomOf="@id/color_dropdown"/>
+
+    <Spinner
+        android:id="@+id/color_dropdown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@id/vertical_space_left"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/match_number_editText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/team_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/team_number"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_space_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/team_number_editText" />
+
+    <EditText
+        android:id="@+id/team_number_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:layout_marginEnd="10dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_left"
+        app:layout_constraintTop_toBottomOf="@+id/student_name_editText"
+        tools:ignore="SpeakableTextPresentCheck"
+        android:autofillHints="" />
+
+    <TextView
+        android:id="@+id/student_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/name"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_space_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/student_name_editText" />
+
+    <EditText
+        android:id="@+id/student_name_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="#FFFFFF"
+        android:layout_marginEnd="10dp"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_left"
+        app:layout_constraintTop_toBottomOf="@+id/match_information"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <View
+        android:id="@+id/vertical_space"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/horizontal_space3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_space" />
+
+    <View
+        android:id="@+id/vertical_space_left"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_space" />
+
+    <View
+        android:id="@+id/vertical_space_right"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/horizontal_space" />
+
+    <TextView
+        android:id="@+id/match_number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/match_number"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/vertical_space_left"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/match_number_editText" />
+
+    <EditText
+        android:id="@+id/match_number_editText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:importantForAutofill="no"
+        android:layout_marginEnd="10dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@id/vertical_space_left"
+        app:layout_constraintTop_toBottomOf="@+id/team_number_editText"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <View
+        android:id="@+id/horizontal_space"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/horizontal_space2"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_cargo_upper_max" />
+
+    <View
+        android:id="@+id/horizontal_space3"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="5dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/teleop_cargo_upper_max" />
+
+    <Spinner
+        android:id="@+id/climber_dropdown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/endgame_title"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/submit_match_data"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/additional_comments" />
+
+    <Switch
+        android:id="@+id/move_auto_switch"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:text="@string/taxi_leave_tarmac_area"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/auto_period_title" />
+
+    <TextView
+        android:id="@+id/auto_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/border"
+        android:text="@string/cargo_in_lower_hub"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/move_auto_switch" />
+
+    <TextView
+        android:id="@+id/auto_text2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/border"
+        android:text="@string/cargo_in_upper_hub"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/auto_cargo_lower_min" />
+
+    <Button
+        android:id="@+id/auto_cargo_lower_min"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/minus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/auto_text" />
+
+    <Button
+        android:id="@+id/auto_cargo_lower_max"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@android:color/black"
+        android:text="@string/plus_sign"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auto_text" />
+
+    <TextView
+        android:id="@+id/auto_cargo_lower_hub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_number"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/auto_text2"
+        app:layout_constraintEnd_toStartOf="@+id/auto_cargo_lower_max"
+        app:layout_constraintStart_toEndOf="@+id/auto_cargo_lower_min"
+        app:layout_constraintTop_toBottomOf="@+id/auto_text" />
+
+    <EditText
+        android:id="@+id/additional_comments"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/additional_comment"
+        android:inputType="textMultiLine"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/red_penalty_min"
+        android:autofillHints="" />
+
+    <View
+        android:id="@+id/red_left"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/red_text"
+        app:layout_constraintBottom_toTopOf="@+id/additional_comments"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/end_of_match_title" />
+
+    <View
+        android:id="@+id/blue_left"
+        android:layout_width="5dp"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:background="@color/blue_text"
+        app:layout_constraintBottom_toTopOf="@+id/additional_comments"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@+id/end_of_match_title" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#404040"
-    tools:context=".MainActivity">
+    tools:context=".pit_scouting">
 
     <View
         android:id="@+id/horizontal_space"
@@ -84,7 +84,7 @@
         android:id="@+id/team_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#C9FF0000"
+        android:background="@color/red_background"
         android:text="@string/team_information"
         android:gravity="center"
         android:textColor="@color/white"
@@ -97,7 +97,7 @@
         android:id="@+id/robot_information"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#C9FF0000"
+        android:background="@color/red_background"
         android:text="@string/robot_information"
         android:gravity="center"
         android:textColor="@color/white"

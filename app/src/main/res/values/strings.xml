@@ -25,15 +25,26 @@
     <string name="additional_comment">Additional Comments (Optional)</string>
     <string name="additional_information">Additional Information</string>
     <string name="submit_pit_data">~ Submit Pit Data ~</string>
-
-    <string-array name="planets_array">
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
+    <string name="type_notes_here">Type Notes Here</string>
+    <string name="zero_number">0</string>
+    <string name="plus_sign">+</string>
+    <string name="minus_sign">-</string>
+    <string name="cargo_in_upper_hub">Cargo In Upper Hub</string>
+    <string name="cargo_in_lower_hub">Cargo In Lower Hub</string>
+    <string name="taxi_leave_tarmac_area">Taxi (leave tarmac area)</string>
+    <string name="match_number">Match Number:</string>
+    <string name="submit_match_data">Submit Match Data</string>
+    <string name="win">Win?</string>
+    <string name="color">Alliance Color:</string>
+    <string name="end_of_match">End of Match</string>
+    <string name="end_game">End Game</string>
+    <string name="teleop_period">Teleop Period</string>
+    <string name="auto_period">Autonomous Period</string>
+    <string name="match_information">Match Information</string>
+    <string name="enter_blue_penalty_pts">Blue Penatly Points</string>
+    <string name="enter_red_penalty_pts">Red Penalty Points</string>
+    <string name="broken">Broken?</string>
+    <string name="disabled">Disabled?</string>
+    <string name="red_total_points">Red Total Points:</string>
+    <string name="blue_total_points">Blue Total Points:</string>
 </resources>
