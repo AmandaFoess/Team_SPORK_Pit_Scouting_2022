@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
@@ -111,7 +112,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         //initialize switch
         move_auto_switch = findViewById(R.id.move_auto_switch);
         broken_switch = findViewById(R.id.broken_switch);
-        disabled_switch = findViewById(R.id.broken_switch);
+        disabled_switch = findViewById(R.id.disable_switch);
     }
 
     @Override
@@ -186,7 +187,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         //increment
         i = i + 1;
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         auto_cargo_lower_hub_textView.setText(a);
     }
@@ -201,7 +202,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
             i = i - 1;
         }
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         auto_cargo_lower_hub_textView.setText(a);
     }
@@ -212,7 +213,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         //increment
         i = i + 1;
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         auto_cargo_upper_hub_textView.setText(a);
     }
@@ -227,7 +228,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
             i = i - 1;
         }
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         auto_cargo_upper_hub_textView.setText(a);
     }
@@ -238,7 +239,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         //increment
         i = i + 1;
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         teleop_cargo_lower_hub_textView.setText(a);
     }
@@ -253,7 +254,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
             i = i - 1;
         }
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         teleop_cargo_lower_hub_textView.setText(a);
     }
@@ -264,7 +265,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         //increment
         i = i + 1;
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         teleop_cargo_upper_hub_textView.setText(a);
     }
@@ -279,7 +280,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
             i = i - 1;
         }
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         teleop_cargo_upper_hub_textView.setText(a);
     }
@@ -290,7 +291,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         //increment
         i = i + 1;
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         red_penalty_points_textView.setText(a);
     }
@@ -305,7 +306,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
             i = i - 1;
         }
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         red_penalty_points_textView.setText(a);
     }
@@ -316,7 +317,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         //increment
         i = i + 1;
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         blue_penalty_points_textView.setText(a);
     }
@@ -331,7 +332,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
             i = i - 1;
         }
         // convert int to string
-        String a = new Integer(i).toString();
+        String a = Integer.valueOf(i).toString();
         // sets the score to the corresponding text view
         blue_penalty_points_textView.setText(a);
     }
