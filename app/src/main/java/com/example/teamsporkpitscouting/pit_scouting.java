@@ -31,7 +31,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
 
     Button submit_button;
     EditText student_name, team_number, pit_number, robot_height, robot_weight, autonomous_strategy_comment, endgame_strategy_comment, drivetrain_type, order_of_wheels, number_of_wheels, additional_comments;
-    Spinner cargo_number_spinner, cargo_pickup_location_spinner, cargo_shoot_location_spinner, cargo_shoot_location_hub_spinner;
+    Spinner cargo_number_spinner, cargo_pickup_location_spinner, cargo_shoot_location_spinner, cargo_shoot_location_hub_spinner, climber_level_spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
 
         List<String> cargo_pickup_location_spinner_category = new ArrayList<>();
         cargo_pickup_location_spinner_category.add("Does not pick up");
-        cargo_pickup_location_spinner_category.add("Human PLayer Station");
+        cargo_pickup_location_spinner_category.add("Human Player Station");
         cargo_pickup_location_spinner_category.add("On the Field");
         cargo_pickup_location_spinner_category.add("Picks Up Anywhere");
 
@@ -108,6 +108,21 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         ArrayAdapter<String> array_adapter_cargo_shoot_location_hub_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cargo_shoot_location_hub_spinner_category);
         array_adapter_cargo_shoot_location_hub_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         cargo_shoot_location_hub_spinner.setAdapter(array_adapter_cargo_shoot_location_hub_spinner);
+
+        //Endgame strategy
+        Spinner climber_level_spinner = findViewById(R.id.endgame_dropdown);
+        climber_level_spinner.setOnItemSelectedListener(this);
+
+        List<String> climber_level_spinner_category = new ArrayList<>();
+        climber_level_spinner_category.add("Does Not Climb");
+        climber_level_spinner_category.add("Low Rung");
+        climber_level_spinner_category.add("Mid Rung");
+        climber_level_spinner_category.add("High Run");
+        climber_level_spinner_category.add("Traversal Rung");
+
+        ArrayAdapter<String> array_adapter_climber_level_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, climber_level_spinner_category);
+        array_adapter_climber_level_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        climber_level_spinner.setAdapter(array_adapter_climber_level_spinner);
     }
 
     @Override
@@ -117,7 +132,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
 
     public void add_data_to_sheet() {
 
-        final ProgressDialog loading = ProgressDialog.show(this,"Adding Item","Please wait");
+        final ProgressDialog loading = ProgressDialog.show(this,"Adding Pit Scouting Data","Please wait");
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbx0N9HhNYpj0oNBikKxrx2Z-EDZrKUfOeiG0_-Btu1cTyld5eEVjiGsjMefzhByLke4lw/exec",
                 new Response.Listener<String>() {
@@ -159,6 +174,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
                 params.put("cargo_pickup_location_spinner",cargo_pickup_location_spinner.getSelectedItem().toString().trim());
                 params.put("cargo_shoot_location_spinner",cargo_shoot_location_spinner.getSelectedItem().toString().trim());
                 params.put("cargo_shoot_location_hub_spinner",cargo_shoot_location_hub_spinner.getSelectedItem().toString().trim());
+                params.put("climber_level_spinner",climber_level_spinner.getSelectedItem().toString().trim());
 
                 return params;
             }

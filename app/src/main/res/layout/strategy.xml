@@ -114,6 +114,7 @@
 
     <Button
         android:id="@+id/red_penalty_min"
+        android:onClick="red_penalty_points_min"
         android:layout_width="92dp"
         android:layout_height="49dp"
         android:layout_marginStart="10dp"
@@ -125,13 +126,13 @@
         app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
 
     <TextView
-        android:id="@+id/red_penaltY_points_total"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/red_penalty_points_title"
+        android:layout_width="10dp"
+        android:layout_height="21dp"
         android:text="@string/zero_number"
         android:textAlignment="center"
-        android:textSize="20sp"
         android:textColor="@color/white"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/red_penalty_max"
         app:layout_constraintEnd_toStartOf="@+id/red_penalty_max"
         app:layout_constraintStart_toEndOf="@+id/red_penalty_min"
@@ -139,6 +140,7 @@
 
     <Button
         android:id="@+id/red_penalty_max"
+        android:onClick="red_penalty_points_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -150,7 +152,7 @@
         app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
 
     <TextView
-        android:id="@+id/blue_penalty_points"
+        android:id="@+id/blue_penalty_points_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -166,6 +168,7 @@
 
     <Button
         android:id="@+id/blue_penalty_min"
+        android:onClick="blue_penalty_points_min"
         android:layout_width="92dp"
         android:layout_height="49dp"
         android:layout_marginStart="10dp"
@@ -174,10 +177,10 @@
         android:backgroundTint="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/blue_left"
-        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points" />
+        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points_title" />
 
     <TextView
-        android:id="@+id/blue_penalty_points_total"
+        android:id="@+id/blue_penalty_points"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/zero_number"
@@ -187,10 +190,11 @@
         app:layout_constraintBottom_toBottomOf="@+id/blue_penalty_max"
         app:layout_constraintEnd_toStartOf="@+id/blue_penalty_max"
         app:layout_constraintStart_toEndOf="@+id/blue_penalty_min"
-        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points" />
+        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points_title" />
 
     <Button
         android:id="@+id/blue_penalty_max"
+        android:onClick="blue_penalty_points_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -199,7 +203,7 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points" />
+        app:layout_constraintTop_toBottomOf="@+id/blue_penalty_points_title" />
 
     <TextView
         android:id="@+id/teleop_text2"
@@ -214,10 +218,11 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/teleop_period_title"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/auto_cargo_lower_min3" />
+        app:layout_constraintTop_toBottomOf="@+id/teleop_cargo_lower_min" />
 
     <Button
         android:id="@+id/teleop_cargo_upper_min"
+        android:onClick="teleop_cargo_upper_hub_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -230,6 +235,7 @@
 
     <Button
         android:id="@+id/teleop_cargo_upper_max"
+        android:onClick="teleop_cargo_upper_hub_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -254,7 +260,8 @@
         app:layout_constraintTop_toBottomOf="@+id/teleop_text2" />
 
     <Button
-        android:id="@+id/auto_cargo_lower_min3"
+        android:id="@+id/teleop_cargo_lower_min"
+        android:onClick="teleop_cargo_lower_hub_min"
         android:layout_width="92dp"
         android:layout_height="49dp"
         android:layout_marginStart="10dp"
@@ -283,6 +290,7 @@
 
     <Button
         android:id="@+id/teleop_cargo_lower_max"
+        android:onClick="teleop_cargo_lower_hub_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
@@ -303,11 +311,12 @@
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/teleop_text2"
         app:layout_constraintEnd_toStartOf="@+id/teleop_cargo_lower_max"
-        app:layout_constraintStart_toEndOf="@+id/auto_cargo_lower_min3"
+        app:layout_constraintStart_toEndOf="@+id/teleop_cargo_lower_min"
         app:layout_constraintTop_toBottomOf="@+id/teleop_text" />
 
     <Button
         android:id="@+id/auto_cargo_upper_min"
+        android:onClick="auto_cargo_upper_hub_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -320,6 +329,7 @@
 
     <Button
         android:id="@+id/auto_cargo_upper_max"
+        android:onClick="auto_cargo_upper_hub_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -410,25 +420,24 @@
         app:layout_constraintTop_toBottomOf="@+id/horizontal_space3" />
 
     <TextView
-        android:id="@+id/color"
+        android:id="@+id/driver_station"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:text="@string/color"
+        android:text="@string/driver_station"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="@+id/vertical_space_left"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/color_dropdown"
-        app:layout_constraintBottom_toBottomOf="@id/color_dropdown"/>
+        app:layout_constraintTop_toTopOf="@+id/driver_station_dropdown"
+        app:layout_constraintBottom_toBottomOf="@id/driver_station_dropdown"/>
 
     <Spinner
-        android:id="@+id/color_dropdown"
+        android:id="@+id/driver_station_dropdown"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
@@ -579,19 +588,56 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/teleop_cargo_upper_max" />
 
+    <TextView
+        android:id="@+id/cimber_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/climber_level"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_right"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toTopOf="@+id/climber_dropdown"
+        app:layout_constraintBottom_toBottomOf="@id/climber_dropdown"/>
+
     <Spinner
         android:id="@+id/climber_dropdown"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="10dp"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_right"
         app:layout_constraintTop_toBottomOf="@+id/endgame_title"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/penalty_card_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:text="@string/penalty_card"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space_right"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toTopOf="@+id/penalty_card_dropdown"
+        app:layout_constraintBottom_toBottomOf="@id/penalty_card_dropdown"/>
+
+    <Spinner
+        android:id="@+id/penalty_card_dropdown"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:minHeight="48dp"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space_right"
+        app:layout_constraintTop_toBottomOf="@+id/disable_switch"
         tools:ignore="SpeakableTextPresentCheck" />
 
     <Button
@@ -656,6 +702,7 @@
 
     <Button
         android:id="@+id/auto_cargo_lower_min"
+        android:onClick="auto_cargo_lower_hub_min"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -668,6 +715,7 @@
 
     <Button
         android:id="@+id/auto_cargo_lower_max"
+        android:onClick="auto_cargo_lower_hub_add"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"

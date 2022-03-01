@@ -16,9 +16,9 @@
     <string name="text_pickup_location_question">Cargo Pickup Location:</string>
     <string name="text_shooting_location_question">Cargo Shooting Location:</string>
     <string name="text_wheel_number_question"># of Wheels:</string>
-    <string name="text_shooting_hub">Cargo Shooting Hub Area:</string>
-    <string name="endgame_strategy">Endgame Strategy</string>
-    <string name="engame_question">Endgame Strategy</string>
+    <string name="text_shooting_hub">Cargo Shooting Hub Level:</string>
+    <string name="endgame_strategy">Endgame Strategy:</string>
+    <string name="engame_question">Endgame Strategy:</string>
     <string name="engame_comment">Describe Endgame Strategy (Optional)</string>
     <string name="autonomous_strategy">Autonomous Strategy</string>
     <string name="autonomous_comment">Describe Autonomous Strategy</string>
@@ -33,7 +33,7 @@
     <string name="cargo_in_lower_hub">Cargo In Lower Hub</string>
     <string name="taxi_leave_tarmac_area">Taxi (leave tarmac area)</string>
     <string name="match_number">Match Number:</string>
-    <string name="submit_match_data">Submit Match Data</string>
+    <string name="submit_match_data">~ Submit Match Data ~</string>
     <string name="win">Win?</string>
     <string name="color">Alliance Color:</string>
     <string name="end_of_match">End of Match</string>
@@ -47,4 +47,11 @@
     <string name="disabled">Disabled?</string>
     <string name="red_total_points">Red Total Points:</string>
     <string name="blue_total_points">Blue Total Points:</string>
+    <string name="issues_found">Description of Issue(s)</string>
+    <string name="issues_resolved">Issues Resolved (Describe Fix)</string>
+    <string name="unresolved_issues">Unresolved Issues</string>
+    <string name="pit_comments">Pit Comments</string>
+    <string name="driver_station">Driver Station:</string>
+    <string name="climber_level">Level Climbed:</string>
+    <string name="penalty_card">Penalty Cards Earned:</string>
 </resources>
