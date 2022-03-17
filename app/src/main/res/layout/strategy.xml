@@ -96,7 +96,7 @@
 
 
     <TextView
-        android:id="@+id/red_penalty_points"
+        android:id="@+id/red_penalty_points_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -123,12 +123,12 @@
         android:backgroundTint="@android:color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@id/red_left"
-        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
+        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points_title" />
 
     <TextView
-        android:id="@+id/red_penalty_points_title"
-        android:layout_width="10dp"
-        android:layout_height="21dp"
+        android:id="@+id/red_penalty_points"
+        android:layout_width="12dp"
+        android:layout_height="wrap_content"
         android:text="@string/zero_number"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -136,7 +136,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/red_penalty_max"
         app:layout_constraintEnd_toStartOf="@+id/red_penalty_max"
         app:layout_constraintStart_toEndOf="@+id/red_penalty_min"
-        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
+        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points_title" />
 
     <Button
         android:id="@+id/red_penalty_max"
@@ -149,7 +149,7 @@
         android:textColor="#FFFFFF"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/teleop_period_title"
-        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points" />
+        app:layout_constraintTop_toBottomOf="@+id/red_penalty_points_title" />
 
     <TextView
         android:id="@+id/blue_penalty_points_title"
@@ -164,7 +164,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/blue_left"
-        app:layout_constraintTop_toTopOf="@id/red_penalty_points" />
+        app:layout_constraintTop_toTopOf="@id/red_penalty_points_title" />
 
     <Button
         android:id="@+id/blue_penalty_min"

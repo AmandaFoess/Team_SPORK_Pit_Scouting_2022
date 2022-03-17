@@ -21,6 +21,12 @@ public class opening_page extends AppCompatActivity implements View.OnClickListe
         pit_issue_log = findViewById(R.id.pit_issue_log_btn);
         match_schedule = findViewById(R.id.match_schedule_btn);
         member_rotation = findViewById(R.id.member_rotation_btn);
+
+        pit_scouting.setOnClickListener(this);
+        strategy.setOnClickListener(this);
+        pit_issue_log.setOnClickListener(this);
+        match_schedule.setOnClickListener(this);
+        member_rotation.setOnClickListener(this);
     }
 
     @Override

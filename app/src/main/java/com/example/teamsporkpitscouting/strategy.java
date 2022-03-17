@@ -1,8 +1,8 @@
 package com.example.teamsporkpitscouting;
 
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -11,24 +11,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.SwitchCompat;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+import com.opencsv.CSVWriter;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class strategy extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -37,6 +28,9 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
     TextView auto_cargo_lower_hub_textView, auto_cargo_upper_hub_textView, teleop_cargo_lower_hub_textView, teleop_cargo_upper_hub_textView, red_penalty_points_textView, blue_penalty_points_textView;
     Spinner driver_station_spinner, climber_spinner, penalty_card_spinner;
     Switch move_auto_switch, broken_switch, disabled_switch;
+    String driver_station_value, climber_value, penalty_card_value, csv;
+    String[] array = new String[17];
+    CSVWriter writer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +83,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         climber_spinner_list.add("Does Not Climb");
         climber_spinner_list.add("Low Rung");
         climber_spinner_list.add("Mid Rung");
-        climber_spinner_list.add("High Run");
+        climber_spinner_list.add("High Rung");
         climber_spinner_list.add("Traversal Rung");
 
         ArrayAdapter<String> array_adapter_climber_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, climber_spinner_list);
@@ -113,6 +107,9 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         move_auto_switch = findViewById(R.id.move_auto_switch);
         broken_switch = findViewById(R.id.broken_switch);
         disabled_switch = findViewById(R.id.disable_switch);
+
+        csv = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/TeamSPORKStrategy.csv");
+
     }
 
     @Override
@@ -122,63 +119,54 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
 
     public void add_strategy_data_to_sheet() {
         final ProgressDialog loading = ProgressDialog.show(this,"Adding Strategy Data","Please wait");
+        try {
+            writer = new CSVWriter(new FileWriter(csv, true));
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbx0N9HhNYpj0oNBikKxrx2Z-EDZrKUfOeiG0_-Btu1cTyld5eEVjiGsjMefzhByLke4lw/exec",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        loading.dismiss();
-                        Toast.makeText(strategy.this,response,Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(),strategy.class);
-                        startActivity(intent);
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                    }
-                }
-        ) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
+            array[0] = student_name_editText.getText().toString().trim();
+            array[1] = team_number_editText.getText().toString().trim();
+            array[2] = match_number_editText.getText().toString().trim();
+            array[3] = red_total_points_editText.getText().toString().trim();
+            array[4] = blue_total_points_editText.getText().toString().trim();
+            array[5] = red_penalty_points_textView.getText().toString().trim();
+            array[6] = blue_penalty_points_textView.getText().toString().trim();
+            array[7] = auto_cargo_lower_hub_textView.getText().toString().trim();
+            array[8] = auto_cargo_upper_hub_textView.getText().toString().trim();
+            array[9] = teleop_cargo_lower_hub_textView.getText().toString().trim();
+            array[10] = teleop_cargo_upper_hub_textView.getText().toString().trim();
 
-                //Text
-                params.put("action","add_raw_strategy_data");
-                params.put("student_name",student_name_editText.getText().toString().trim());
-                params.put("team_number",team_number_editText.getText().toString().trim());
-                params.put("match_number",match_number_editText.getText().toString().trim());
-                params.put("red_total_points",red_total_points_editText.getText().toString().trim());
-                params.put("blue_total_points",blue_total_points_editText.getText().toString().trim());
-                params.put("red_penalty_points",red_penalty_points_textView.getText().toString().trim());
-                params.put("blue_penalty_points",blue_penalty_points_textView.getText().toString().trim());
-                params.put("auto_cargo_lower_hu",auto_cargo_lower_hub_textView.getText().toString().trim());
-                params.put("auto_cargo_upper_hub",auto_cargo_upper_hub_textView.getText().toString().trim());
-                params.put("teleop_cargo_lower_hub",teleop_cargo_lower_hub_textView.getText().toString().trim());
-                params.put("teleop_cargo_upper_hub",teleop_cargo_upper_hub_textView.getText().toString().trim());
+            //Spinners
+            array[11] = driver_station_value.trim();
+            array[12] = climber_value.trim();
+            array[13] = penalty_card_value.trim();
 
-                //Spinners
-                params.put("driver_station_spinner",driver_station_spinner.getSelectedItem().toString().trim());
-                params.put("climber_spinner",climber_spinner.getSelectedItem().toString().trim());
-                params.put("penalty_card_spinner",penalty_card_spinner.getSelectedItem().toString().trim());
+            //Boolean from switch
+            array[14] = String.valueOf(move_auto_switch.isChecked()).trim();
+            array[15] = String.valueOf(broken_switch.isChecked()).trim();
+            array[16] = String.valueOf(disabled_switch.isChecked()).trim();
 
-                //Boolean from switch
-                params.put("move_auto_switch",String.valueOf(move_auto_switch.isChecked()).trim());
-                params.put("broken_switch",String.valueOf(broken_switch.isChecked()).trim());
-                params.put("disabled_switch",String.valueOf(disabled_switch.isChecked()).trim());
+            writer.writeNext(array);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        loading.dismiss();
 
-                return params;
-            }
-        };
+        student_name_editText.setText("");
+        team_number_editText.setText("");
+        match_number_editText.setText("");
+        red_total_points_editText.setText("");
+        blue_total_points_editText.setText("");
+        red_penalty_points_textView.setText("");
+        blue_penalty_points_textView.setText("");
+        auto_cargo_lower_hub_textView.setText("");
+        auto_cargo_upper_hub_textView.setText("");
+        teleop_cargo_lower_hub_textView.setText("");
+        teleop_cargo_upper_hub_textView.setText("");
 
-        int socketTimeOut = 5000;// u can change this .. here it is 50 seconds
+        move_auto_switch.setChecked(false);
+        broken_switch.setChecked(false);
+        disabled_switch.setChecked(false);
 
-        RetryPolicy retryPolicy = new DefaultRetryPolicy(socketTimeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-        stringRequest.setRetryPolicy(retryPolicy);
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-        queue.add(stringRequest);
     }
 
     public void auto_cargo_lower_hub_add(View view) {
@@ -341,9 +329,13 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
-
-        // Showing selected spinner item
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+        if (parent == driver_station_spinner) {
+            driver_station_value = item;
+        } else if (parent == climber_spinner){
+            climber_value = item;
+        } else if (parent == penalty_card_spinner){
+            penalty_card_value = item;
+        }
     }
 
     @Override

@@ -51,7 +51,7 @@ public class pit_issue_log extends AppCompatActivity implements View.OnClickList
     public void add_pit_issue_log_data() {
         final ProgressDialog loading = ProgressDialog.show(this,"Adding Pit Issue Log Data","Please wait");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbx0N9HhNYpj0oNBikKxrx2Z-EDZrKUfOeiG0_-Btu1cTyld5eEVjiGsjMefzhByLke4lw/exec",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbyKCPcP8o1aTa8pQaljOohijo__KHR8kpBBoMmYu6yXejFPpfs7uEQSMfZCstEj0NJAEw/exec",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

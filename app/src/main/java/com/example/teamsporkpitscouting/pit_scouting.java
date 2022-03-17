@@ -85,11 +85,11 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         cargo_shoot_location_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_shoot_location_spinner_category = new ArrayList<>();
-        cargo_pickup_location_spinner_category.add("Does Not Shoot");
+        cargo_shoot_location_spinner_category.add("Does Not Shoot");
         cargo_shoot_location_spinner_category.add("Human Player Station");
         cargo_shoot_location_spinner_category.add("Launch Pad");
         cargo_shoot_location_spinner_category.add("Tarmac");
-        cargo_pickup_location_spinner_category.add("Shoots Anywhere");
+        cargo_shoot_location_spinner_category.add("Shoots Anywhere");
 
         ArrayAdapter<String> array_adapter_cargo_shoot_location_spinner= new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, cargo_shoot_location_spinner_category);
         array_adapter_cargo_shoot_location_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -117,7 +117,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         climber_level_spinner_category.add("Does Not Climb");
         climber_level_spinner_category.add("Low Rung");
         climber_level_spinner_category.add("Mid Rung");
-        climber_level_spinner_category.add("High Run");
+        climber_level_spinner_category.add("High Rung");
         climber_level_spinner_category.add("Traversal Rung");
 
         ArrayAdapter<String> array_adapter_climber_level_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, climber_level_spinner_category);
@@ -134,7 +134,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
 
         final ProgressDialog loading = ProgressDialog.show(this,"Adding Pit Scouting Data","Please wait");
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbx0N9HhNYpj0oNBikKxrx2Z-EDZrKUfOeiG0_-Btu1cTyld5eEVjiGsjMefzhByLke4lw/exec",
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbyKCPcP8o1aTa8pQaljOohijo__KHR8kpBBoMmYu6yXejFPpfs7uEQSMfZCstEj0NJAEw/exec",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -194,8 +194,6 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
-
-        // Showing selected spinner item
         Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
     }
 
