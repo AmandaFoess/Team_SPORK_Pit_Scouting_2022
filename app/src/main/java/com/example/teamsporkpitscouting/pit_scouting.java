@@ -3,6 +3,7 @@ package com.example.teamsporkpitscouting;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,7 +22,10 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.opencsv.CSVWriter;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,6 +36,9 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
     Button submit_button;
     EditText student_name, team_number, pit_number, robot_height, robot_weight, autonomous_strategy_comment, endgame_strategy_comment, drivetrain_type, order_of_wheels, number_of_wheels, additional_comments;
     Spinner cargo_number_spinner, cargo_pickup_location_spinner, cargo_shoot_location_spinner, cargo_shoot_location_hub_spinner, climber_level_spinner;
+    String[] array = new String[16];
+    CSVWriter writer;
+    String csv, cargo_number_value, cargo_pickup_location_value, cargo_shoot_location_value, cargo_shoot_location_hub_value, climber_level_value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +130,8 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         ArrayAdapter<String> array_adapter_climber_level_spinner = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, climber_level_spinner_category);
         array_adapter_climber_level_spinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         climber_level_spinner.setAdapter(array_adapter_climber_level_spinner);
+
+        csv = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/TeamSPORK_PitScouting.csv");
     }
 
     @Override
@@ -132,69 +141,65 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
 
     public void add_data_to_sheet() {
 
-        final ProgressDialog loading = ProgressDialog.show(this,"Adding Pit Scouting Data","Please wait");
+        try{
+            writer = new CSVWriter(new FileWriter(csv, true));
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, "https://script.google.com/macros/s/AKfycbyKCPcP8o1aTa8pQaljOohijo__KHR8kpBBoMmYu6yXejFPpfs7uEQSMfZCstEj0NJAEw/exec",
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        loading.dismiss();
-                        Toast.makeText(pit_scouting.this,response,Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(getApplicationContext(),pit_scouting.class);
-                        startActivity(intent);
-                    }
-                },
+            array[0] = ("null");
+            array[1] = ("null");
+            array[2] = ("null");
+            array[3] = ("null");
+            array[4] = ("null");
+            array[5] = ("null");
+            array[6] = ("null");
+            array[7] = ("null");
+            array[8] = ("null");
+            array[9] = ("null");
+            array[10] = ("null");
+            array[11] = ("null");
+            array[12] = ("null");
+            array[13] = ("null");
+            array[14] = ("null");
+            array[15] = ("null");
 
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                    }
-                }
-        ) {
-            @Override
-            protected Map<String, String> getParams() {
-                Map<String, String> params = new HashMap<>();
+            array[0] = student_name.getText().toString().trim();
+            array[1] = team_number.getText().toString().trim();
+            array[2] = pit_number.getText().toString().trim();
+            array[3] = robot_height.getText().toString().trim();
+            array[4] = robot_weight.getText().toString().trim();
+            array[5] = autonomous_strategy_comment.getText().toString().trim();
+            array[6] = endgame_strategy_comment.getText().toString().trim();
+            array[7] = drivetrain_type.getText().toString().trim();
+            array[8] = order_of_wheels.getText().toString().trim();
+            array[9] = number_of_wheels.getText().toString().trim();
+            array[10] = additional_comments.getText().toString().trim();
+            array[11] = cargo_number_value.trim();
+            array[12] = cargo_pickup_location_value.trim();
+            array[13] = cargo_shoot_location_value.trim();
+            array[14] = cargo_shoot_location_hub_value.trim();
+            array[15] = climber_level_value.trim();
 
-                //Text
-                params.put("action","add_raw_pit_data");
-                params.put("student_name",student_name.getText().toString().trim());
-                params.put("team_number",team_number.getText().toString().trim());
-                params.put("pit_number",pit_number.getText().toString().trim());
-                params.put("robot_height",robot_height.getText().toString().trim());
-                params.put("robot_weight",robot_weight.getText().toString().trim());
-                params.put("autonomous_strategy_comment",autonomous_strategy_comment.getText().toString().trim());
-                params.put("endgame_strategy_comment",endgame_strategy_comment.getText().toString().trim());
-                params.put("drivetrain_type",drivetrain_type.getText().toString().trim());
-                params.put("order_of_wheels",order_of_wheels.getText().toString().trim());
-                params.put("number_of_wheels",number_of_wheels.getText().toString().trim());
-                params.put("additional_comment",additional_comments.getText().toString().trim());
-
-                //Spinners
-                params.put("cargo_number_spinner",cargo_number_spinner.getSelectedItem().toString().trim());
-                params.put("cargo_pickup_location_spinner",cargo_pickup_location_spinner.getSelectedItem().toString().trim());
-                params.put("cargo_shoot_location_spinner",cargo_shoot_location_spinner.getSelectedItem().toString().trim());
-                params.put("cargo_shoot_location_hub_spinner",cargo_shoot_location_hub_spinner.getSelectedItem().toString().trim());
-                params.put("climber_level_spinner",climber_level_spinner.getSelectedItem().toString().trim());
-
-                return params;
-            }
-        };
-
-        int socketTimeOut = 5000;// u can change this .. here it is 50 seconds
-
-        RetryPolicy retryPolicy = new DefaultRetryPolicy(socketTimeOut, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT);
-        stringRequest.setRetryPolicy(retryPolicy);
-
-        RequestQueue queue = Volley.newRequestQueue(this);
-
-        queue.add(stringRequest);
+            writer.writeNext(array);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
         // On selecting a spinner item
         String item = parent.getItemAtPosition(position).toString();
-        Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+        if (parent == cargo_number_spinner) {
+            cargo_number_value = item;
+        } else if (parent == cargo_pickup_location_spinner){
+            cargo_pickup_location_value = item;
+        } else if (parent == cargo_shoot_location_spinner){
+            cargo_shoot_location_value = item;
+        } else if (parent == cargo_shoot_location_hub_spinner){
+            cargo_shoot_location_hub_value = item;
+        } else if (parent == climber_level_spinner){
+            climber_level_value = item;
+        }
     }
 
     @Override

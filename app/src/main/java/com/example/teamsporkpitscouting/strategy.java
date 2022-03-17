@@ -13,6 +13,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.SwitchCompat;
 
 import com.opencsv.CSVWriter;
 
@@ -29,7 +30,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
     Spinner driver_station_spinner, climber_spinner, penalty_card_spinner;
     Switch move_auto_switch, broken_switch, disabled_switch;
     String driver_station_value, climber_value, penalty_card_value, csv;
-    String[] array = new String[17];
+    String[] array = new String[18];
     CSVWriter writer;
 
     @Override
@@ -108,8 +109,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         broken_switch = findViewById(R.id.broken_switch);
         disabled_switch = findViewById(R.id.disable_switch);
 
-        csv = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/TeamSPORKStrategy.csv");
-
+        csv = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/TeamSPORK_Strategy.csv");
     }
 
     @Override
@@ -118,9 +118,27 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
     }
 
     public void add_strategy_data_to_sheet() {
-        final ProgressDialog loading = ProgressDialog.show(this,"Adding Strategy Data","Please wait");
         try {
             writer = new CSVWriter(new FileWriter(csv, true));
+
+            array[0] = ("null");
+            array[1] = ("null");
+            array[2] = ("null");
+            array[3] = ("null");
+            array[4] = ("null");
+            array[5] = ("null");
+            array[6] = ("null");
+            array[7] = ("null");
+            array[8] = ("null");
+            array[9] = ("null");
+            array[10] = ("null");
+            array[11] = ("null");
+            array[12] = ("null");
+            array[13] = ("null");
+            array[14] = ("null");
+            array[15] = ("null");
+            array[16] = ("null");
+            array[17] = ("null");
 
             array[0] = student_name_editText.getText().toString().trim();
             array[1] = team_number_editText.getText().toString().trim();
@@ -133,40 +151,35 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
             array[8] = auto_cargo_upper_hub_textView.getText().toString().trim();
             array[9] = teleop_cargo_lower_hub_textView.getText().toString().trim();
             array[10] = teleop_cargo_upper_hub_textView.getText().toString().trim();
-
-            //Spinners
             array[11] = driver_station_value.trim();
             array[12] = climber_value.trim();
             array[13] = penalty_card_value.trim();
-
-            //Boolean from switch
             array[14] = String.valueOf(move_auto_switch.isChecked()).trim();
             array[15] = String.valueOf(broken_switch.isChecked()).trim();
             array[16] = String.valueOf(disabled_switch.isChecked()).trim();
+            array[17] = additional_comments_editText.getText().toString().trim();
 
             writer.writeNext(array);
             writer.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        loading.dismiss();
 
         student_name_editText.setText("");
         team_number_editText.setText("");
         match_number_editText.setText("");
         red_total_points_editText.setText("");
         blue_total_points_editText.setText("");
-        red_penalty_points_textView.setText("");
-        blue_penalty_points_textView.setText("");
-        auto_cargo_lower_hub_textView.setText("");
-        auto_cargo_upper_hub_textView.setText("");
-        teleop_cargo_lower_hub_textView.setText("");
-        teleop_cargo_upper_hub_textView.setText("");
+        red_penalty_points_textView.setText("0");
+        blue_penalty_points_textView.setText("0");
+        auto_cargo_lower_hub_textView.setText("0");
+        auto_cargo_upper_hub_textView.setText("0");
+        teleop_cargo_lower_hub_textView.setText("0");
+        teleop_cargo_upper_hub_textView.setText("0");
 
         move_auto_switch.setChecked(false);
         broken_switch.setChecked(false);
         disabled_switch.setChecked(false);
-
     }
 
     public void auto_cargo_lower_hub_add(View view) {
