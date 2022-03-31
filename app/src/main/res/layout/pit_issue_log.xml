@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#404040"
+    android:background="#606060"
     tools:context=".pit_issue_log">
 
     <View
@@ -17,135 +17,131 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/issues_found"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/red_background"
-        android:text="@string/issues_found"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
-
-    <EditText
-        android:id="@+id/issues_found_editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:layout_margin="10dp"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:hint="Type Here"
-        android:textColorHint="@color/white"
-        android:textSize="25dp"
-        android:minHeight="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/issues_found"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/issues_resolved"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/red_background"
-        android:text="@string/issues_resolved"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/issues_found_editText" />
-
-    <EditText
-        android:id="@+id/issues_resolved_editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:layout_margin="10dp"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
-        android:hint="Type Here"
-        android:textColorHint="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/issues_resolved"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/unresolved_issues"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/red_background"
-        android:text="@string/unresolved_issues"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/issues_resolved_editText" />
-
-    <EditText
-        android:id="@+id/unresolved_issue_editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:layout_margin="10dp"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
-        android:hint="Type Here"
-        android:textColorHint="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unresolved_issues"
-        tools:ignore="SpeakableTextPresentCheck" />
-
-    <TextView
-        android:id="@+id/pit_comments"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/red_background"
-        android:text="@string/pit_comments"
-        android:textAlignment="center"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/unresolved_issue_editText" />
-
-    <EditText
-        android:id="@+id/pit_comments_editText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textColor="#FFFFFF"
-        android:layout_margin="10dp"
-        android:importantForAutofill="no"
-        android:inputType="textMultiLine"
-        android:minHeight="48dp"
-        android:hint="Type Here"
-        android:textColorHint="@color/white"
-        android:textSize="25dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pit_comments"
-        tools:ignore="SpeakableTextPresentCheck" />
-
     <View
         android:id="@+id/horizontal_space2"
         android:layout_width="match_parent"
         android:layout_height="10dp"
+        android:layout_marginTop="10dp"
         android:background="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pit_comments_editText" />
+        app:layout_constraintTop_toBottomOf="@id/bearings_index" />
+
+    <View
+        android:id="@+id/horizontal_space3"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/motor_gearbox_intake" />
+
+    <TextView
+        android:id="@+id/index_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="Index"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
+
+    <TextView
+        android:id="@+id/chassis_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="Chassis"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space" />
+
+    <TextView
+        android:id="@+id/intake_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="Intake"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toStartOf="@+id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
+
+    <TextView
+        android:id="@+id/shooter_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="Shooter"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toEndOf="@+id/vertical_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
+
+    <TextView
+        android:id="@+id/climber_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/red_background"
+        android:text="Climber"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_space3" />
+
+
+    <View
+        android:id="@+id/vertical_space"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        android:background="#000000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/climber_title"/>
+
+    <View
+        android:id="@+id/vertical_space2"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toStartOf="@id/vertical_space"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/vertical_space3"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <View
+        android:id="@+id/vertical_space4"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/climber_title"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
     <Button
         android:id="@+id/submit_button"
@@ -158,7 +154,479 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/horizontal_space2" />
+        app:layout_constraintBottom_toBottomOf="parent" />
 
+    <TextView
+        android:id="@+id/sensors_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Sensors"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/index_title"/>
+
+    <TextView
+        android:id="@+id/chain_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Chain"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sensors_index"/>
+
+    <TextView
+        android:id="@+id/belts_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Belts"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chain_index"/>
+
+    <TextView
+        android:id="@+id/pulleys_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Pulleys"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/belts_index"/>
+
+    <TextView
+        android:id="@+id/motor_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Motors"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pulleys_index"/>
+
+    <TextView
+        android:id="@+id/baseplate_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Baseplate"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/motor_index"/>
+
+    <TextView
+        android:id="@+id/structure_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="1x1 Structure"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/baseplate_index"/>
+
+    <TextView
+        android:id="@+id/feeder_rail_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Feeder Rail"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/structure_index"/>
+
+    <TextView
+        android:id="@+id/bearings_index"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Bearings"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feeder_rail_index"/>
+
+    <TextView
+        android:id="@+id/chain_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Chain"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/chassis_title"/>
+
+    <TextView
+        android:id="@+id/wheel_sprockets_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Wheel Sprockets"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/chain_chassis"/>
+
+    <TextView
+        android:id="@+id/gearboxes_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Gearboxes"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/wheel_sprockets_chassis"/>
+
+    <TextView
+        android:id="@+id/falcon_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Falcon Motors"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/gearboxes_chassis"/>
+
+    <TextView
+        android:id="@+id/versaframe_structure_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Versaframe Structure"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/falcon_chassis"/>
+
+    <TextView
+        android:id="@+id/bellypan_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Bellypan"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/versaframe_structure_chassis"/>
+
+    <TextView
+        android:id="@+id/intake_slot_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Wheel Sprockets"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/bellypan_chassis"/>
+
+    <TextView
+        android:id="@+id/fasteners_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Fasteners"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/intake_slot_chassis"/>
+
+    <TextView
+        android:id="@+id/wheels_chassis"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Wheels"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/fasteners_chassis"/>
+
+    <TextView
+        android:id="@+id/bearings_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Bearings"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/intake_title"/>
+
+    <TextView
+        android:id="@+id/mecanum_wheels_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Mecanum Wheels"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bearings_intake"/>
+
+    <TextView
+        android:id="@+id/compliance_wheels_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Bearings"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mecanum_wheels_intake"/>
+
+    <TextView
+        android:id="@+id/spacers_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Spacers"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/compliance_wheels_intake" />
+
+    <TextView
+        android:id="@+id/thunderhex_rod_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Thunderhex_Rod"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spacers_intake"/>
+
+    <TextView
+        android:id="@+id/mounting_plates_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Mounting Plates"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thunderhex_rod_intake"/>
+
+    <TextView
+        android:id="@+id/chassis_mount_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Chassis Mount"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mounting_plates_intake"/>
+
+    <TextView
+        android:id="@+id/motor_gearbox_intake"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Motor/Gearbox"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chassis_mount_intake"/>
+
+    <TextView
+        android:id="@+id/traction_wheels_shooter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Traction Wheels"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/shooter_title"/>
+
+    <TextView
+        android:id="@+id/neo_motors_shooter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Neo motors"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/traction_wheels_shooter"/>
+
+    <TextView
+        android:id="@+id/motor_mounts_shooter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Motor Mounts"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/neo_motors_shooter"/>
+
+    <TextView
+        android:id="@+id/welds_shooter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="TWelds"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/motor_mounts_shooter"/>
+
+    <TextView
+        android:id="@+id/shooting_plate_shooter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Shooting Plate"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/welds_shooter"/>
+
+    <TextView
+        android:id="@+id/index_connector_shooter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Index Connector"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space"
+        app:layout_constraintTop_toBottomOf="@id/shooting_plate_shooter"/>
+
+    <TextView
+        android:id="@+id/winch_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Winch"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/climber_title"/>
+
+    <TextView
+        android:id="@+id/motors_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Motors"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/winch_climber"/>
+
+    <TextView
+        android:id="@+id/rope_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Rope"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/motors_climber"/>
+
+    <TextView
+        android:id="@+id/lower_chassis_mounts_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Lower Chassis Mounts"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rope_climber"/>
+
+    <TextView
+        android:id="@+id/bearings_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Bearings"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lower_chassis_mounts_climber"/>
+
+    <TextView
+        android:id="@+id/pistons_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Pistons"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bearings_climber"/>
+
+    <TextView
+        android:id="@+id/Versaframe_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Versaframe"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space4"
+        app:layout_constraintTop_toBottomOf="@id/climber_title"/>
+
+    <TextView
+        android:id="@+id/pass_through_hooks_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Pass-Through Hooks"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space4"
+        app:layout_constraintTop_toBottomOf="@id/Versaframe_climber"/>
+
+    <TextView
+        android:id="@+id/extendable_arms_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Extendable Arms"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space4"
+        app:layout_constraintTop_toBottomOf="@id/pass_through_hooks_climber"/>
+
+    <TextView
+        android:id="@+id/arm_bearing_blocks_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Arm Bering Blocks"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space4"
+        app:layout_constraintTop_toBottomOf="@id/extendable_arms_climber"/>
+
+    <TextView
+        android:id="@+id/sensors_climber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Sensors"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/vertical_space4"
+        app:layout_constraintTop_toBottomOf="@id/arm_bearing_blocks_climber"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

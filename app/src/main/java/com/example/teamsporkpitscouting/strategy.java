@@ -121,25 +121,6 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         try {
             writer = new CSVWriter(new FileWriter(csv, true));
 
-            array[0] = ("null");
-            array[1] = ("null");
-            array[2] = ("null");
-            array[3] = ("null");
-            array[4] = ("null");
-            array[5] = ("null");
-            array[6] = ("null");
-            array[7] = ("null");
-            array[8] = ("null");
-            array[9] = ("null");
-            array[10] = ("null");
-            array[11] = ("null");
-            array[12] = ("null");
-            array[13] = ("null");
-            array[14] = ("null");
-            array[15] = ("null");
-            array[16] = ("null");
-            array[17] = ("null");
-
             array[0] = student_name_editText.getText().toString().trim();
             array[1] = team_number_editText.getText().toString().trim();
             array[2] = match_number_editText.getText().toString().trim();
@@ -180,6 +161,10 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         move_auto_switch.setChecked(false);
         broken_switch.setChecked(false);
         disabled_switch.setChecked(false);
+
+        driver_station_spinner.setSelection(0);
+        climber_spinner.setSelection(0);
+        penalty_card_spinner.setSelection(0);
     }
 
     public void auto_cargo_lower_hub_add(View view) {

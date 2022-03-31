@@ -1,7 +1,5 @@
 package com.example.teamsporkpitscouting;
 
-import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
 import android.view.View;
@@ -10,26 +8,15 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.RetryPolicy;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
 import com.opencsv.CSVWriter;
 
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class pit_scouting extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
@@ -60,8 +47,15 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         number_of_wheels = findViewById(R.id.wheelNumber_editText);
         additional_comments = findViewById(R.id.additional_comment);
 
+        cargo_number_value = "does not work";
+        cargo_pickup_location_value = "does not work";
+        cargo_shoot_location_value = "does not work";
+        cargo_shoot_location_hub_value = "does not work";
+        climber_level_value = "does not work";
+
         //Cargo Number Spinner
-        Spinner cargo_number_spinner = findViewById(R.id.powercell_number_dropdown);
+
+        cargo_number_spinner = findViewById(R.id.powercell_number_dropdown);
         cargo_number_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_number_spinner_category = new ArrayList<>();
@@ -74,7 +68,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         cargo_number_spinner.setAdapter(array_adapter_cargo_number_spinner);
 
         //Cargo Pickup Location
-        Spinner cargo_pickup_location_spinner = findViewById(R.id.powercell_pickup_location_dropdown);
+        cargo_pickup_location_spinner = findViewById(R.id.powercell_pickup_location_dropdown);
         cargo_pickup_location_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_pickup_location_spinner_category = new ArrayList<>();
@@ -88,7 +82,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         cargo_pickup_location_spinner.setAdapter(array_adapter_cargo_pickup_location_spinner);
 
         //Cargo Shooting Location
-        Spinner cargo_shoot_location_spinner = findViewById(R.id.powercell_shooting_location_dropdown);
+        cargo_shoot_location_spinner = findViewById(R.id.powercell_shooting_location_dropdown);
         cargo_shoot_location_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_shoot_location_spinner_category = new ArrayList<>();
@@ -103,7 +97,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         cargo_shoot_location_spinner.setAdapter(array_adapter_cargo_shoot_location_spinner);
 
         //Cargo Shooting Location
-        Spinner cargo_shoot_location_hub_spinner = findViewById(R.id.powercell_shooting_hub_dropdown);
+        cargo_shoot_location_hub_spinner = findViewById(R.id.powercell_shooting_hub_dropdown);
         cargo_shoot_location_hub_spinner.setOnItemSelectedListener(this);
 
         List<String> cargo_shoot_location_hub_spinner_category = new ArrayList<>();
@@ -117,7 +111,7 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         cargo_shoot_location_hub_spinner.setAdapter(array_adapter_cargo_shoot_location_hub_spinner);
 
         //Endgame strategy
-        Spinner climber_level_spinner = findViewById(R.id.endgame_dropdown);
+        climber_level_spinner = findViewById(R.id.endgame_dropdown);
         climber_level_spinner.setOnItemSelectedListener(this);
 
         List<String> climber_level_spinner_category = new ArrayList<>();
@@ -140,26 +134,8 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
     }
 
     public void add_data_to_sheet() {
-
         try{
             writer = new CSVWriter(new FileWriter(csv, true));
-
-            array[0] = ("null");
-            array[1] = ("null");
-            array[2] = ("null");
-            array[3] = ("null");
-            array[4] = ("null");
-            array[5] = ("null");
-            array[6] = ("null");
-            array[7] = ("null");
-            array[8] = ("null");
-            array[9] = ("null");
-            array[10] = ("null");
-            array[11] = ("null");
-            array[12] = ("null");
-            array[13] = ("null");
-            array[14] = ("null");
-            array[15] = ("null");
 
             array[0] = student_name.getText().toString().trim();
             array[1] = team_number.getText().toString().trim();
@@ -183,6 +159,24 @@ public class pit_scouting extends AppCompatActivity implements View.OnClickListe
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        student_name.setText("");
+        team_number.setText("");
+        pit_number.setText("");
+        robot_height.setText("");
+        robot_weight.setText("");
+        autonomous_strategy_comment.setText("");
+        endgame_strategy_comment.setText("");
+        drivetrain_type.setText("");
+        order_of_wheels.setText("");
+        number_of_wheels.setText("");
+        additional_comments.setText("");
+
+        cargo_number_spinner.setSelection(0);
+        cargo_pickup_location_spinner.setSelection(0);
+        cargo_shoot_location_spinner.setSelection(0);
+        cargo_shoot_location_hub_spinner.setSelection(0);
+        climber_level_spinner.setSelection(0);
     }
 
     @Override

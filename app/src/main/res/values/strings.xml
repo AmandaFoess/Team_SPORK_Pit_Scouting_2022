@@ -53,5 +53,5 @@
     <string name="pit_comments">Pit Comments</string>
     <string name="driver_station">Driver Station:</string>
     <string name="climber_level">Level Climbed:</string>
-    <string name="penalty_card">Penalty Cards Earned:</string>
+    <string name="penalty_card">Penalty Cards:</string>
 </resources>
