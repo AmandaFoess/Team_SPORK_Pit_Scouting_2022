@@ -3,9 +3,11 @@ package com.example.teamsporkpitscouting;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +29,7 @@ public class pit_issue_log extends AppCompatActivity implements View.OnClickList
     Button submit_button;
     EditText issues_found_editText, issues_resolved_editText, unresolved_issues_editText, pit_comments_editText;
     Switch blank;
+    String csv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

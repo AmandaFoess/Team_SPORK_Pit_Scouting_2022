@@ -151,6 +151,7 @@ public class strategy extends AppCompatActivity implements View.OnClickListener,
         match_number_editText.setText("");
         red_total_points_editText.setText("");
         blue_total_points_editText.setText("");
+        additional_comments_editText.setText("");
         red_penalty_points_textView.setText("0");
         blue_penalty_points_textView.setText("0");
         auto_cargo_lower_hub_textView.setText("0");
