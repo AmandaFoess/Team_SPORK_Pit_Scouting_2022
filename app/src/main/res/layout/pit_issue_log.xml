@@ -45,6 +45,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/motor_gearbox_intake" />
 
+        <View
+            android:id="@+id/horizontal_space4"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#000000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pistons_climber" />
+
         <TextView
             android:id="@+id/index_title"
             android:layout_width="0dp"
@@ -125,8 +136,8 @@
             android:id="@+id/vertical_space2"
             android:layout_width="10dp"
             android:layout_height="0dp"
-            app:layout_constraintEnd_toStartOf="@id/vertical_space"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="10dp"
+            app:layout_constraintStart_toEndOf="@id/mecanum_wheels_intake"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -134,8 +145,7 @@
             android:id="@+id/vertical_space3"
             android:layout_width="10dp"
             android:layout_height="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/vertical_space"
+            app:layout_constraintStart_toEndOf="@id/versaframe_structure_chassis"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
@@ -148,7 +158,6 @@
             app:layout_constraintTop_toTopOf="@id/climber_title"
             app:layout_constraintBottom_toBottomOf="parent"/>
 
-
         <Button
             android:id="@+id/submit_button"
             android:layout_width="match_parent"
@@ -160,7 +169,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/horizontal_space4"/>
 
         <TextView
             android:id="@+id/sensors_index"
@@ -199,6 +208,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sensors_index"/>
 
+        <Spinner
+            android:id="@+id/chain_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/chain_index"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/belts_index"
             android:layout_width="0dp"
@@ -209,6 +233,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chain_index"/>
+
+        <Spinner
+            android:id="@+id/belts_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/belts_index"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/pulleys_index"
@@ -221,6 +260,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/belts_index"/>
 
+        <Spinner
+            android:id="@+id/pulleys_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/pulleys_index"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/motor_index"
             android:layout_width="0dp"
@@ -231,6 +285,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/pulleys_index"/>
+
+        <Spinner
+            android:id="@+id/motor_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/motor_index"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/baseplate_index"
@@ -243,6 +312,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/motor_index"/>
 
+        <Spinner
+            android:id="@+id/baseplate_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/baseplate_index"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/structure_index"
             android:layout_width="0dp"
@@ -253,6 +337,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/baseplate_index"/>
+
+        <Spinner
+            android:id="@+id/structure_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/structure_index"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/feeder_rail_index"
@@ -265,6 +364,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/structure_index"/>
 
+        <Spinner
+            android:id="@+id/feeder_rail_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/feeder_rail_index"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/bearings_index"
             android:layout_width="0dp"
@@ -275,6 +389,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/feeder_rail_index"/>
+
+        <Spinner
+            android:id="@+id/bearings_index_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/bearings_index"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/chain_chassis"
@@ -287,6 +416,20 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/chassis_title"/>
 
+        <Spinner
+            android:id="@+id/chain_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/chain_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/wheel_sprockets_chassis"
             android:layout_width="0dp"
@@ -297,6 +440,20 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/chain_chassis"/>
+
+        <Spinner
+            android:id="@+id/wheel_sprockets_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/wheel_sprockets_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/gearboxes_chassis"
@@ -309,6 +466,20 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/wheel_sprockets_chassis"/>
 
+        <Spinner
+            android:id="@+id/gearboxes_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/gearboxes_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/falcon_chassis"
             android:layout_width="0dp"
@@ -319,6 +490,20 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/gearboxes_chassis"/>
+
+        <Spinner
+            android:id="@+id/falcon_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/falcon_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/versaframe_structure_chassis"
@@ -331,6 +516,20 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/falcon_chassis"/>
 
+        <Spinner
+            android:id="@+id/versaframe_structure_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/versaframe_structure_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/bellypan_chassis"
             android:layout_width="0dp"
@@ -341,6 +540,20 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/versaframe_structure_chassis"/>
+
+        <Spinner
+            android:id="@+id/bellypan_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/bellypan_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/intake_slot_chassis"
@@ -353,6 +566,20 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/bellypan_chassis"/>
 
+        <Spinner
+            android:id="@+id/intake_slot_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/intake_slot_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/fasteners_chassis"
             android:layout_width="0dp"
@@ -363,6 +590,20 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/intake_slot_chassis"/>
+
+        <Spinner
+            android:id="@+id/fasteners_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/fasteners_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/wheels_chassis"
@@ -375,6 +616,20 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/fasteners_chassis"/>
 
+        <Spinner
+            android:id="@+id/wheels_chassis_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/wheels_chassis"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/bearings_intake"
             android:layout_width="0dp"
@@ -385,6 +640,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/intake_title"/>
+
+        <Spinner
+            android:id="@+id/bearings_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/bearings_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/mecanum_wheels_intake"
@@ -397,16 +667,46 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bearings_intake"/>
 
+        <Spinner
+            android:id="@+id/mecanum_wheels_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/mecanum_wheels_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/compliance_wheels_intake"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Bearings"
+            android:text="Compliance Wheels"
             android:textColor="#FFFFFF"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mecanum_wheels_intake"/>
+
+        <Spinner
+            android:id="@+id/compliance_wheels_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/compliance_wheels_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/spacers_intake"
@@ -419,6 +719,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/compliance_wheels_intake" />
 
+        <Spinner
+            android:id="@+id/spacers_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/spacers_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/thunderhex_rod_intake"
             android:layout_width="0dp"
@@ -429,6 +744,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/spacers_intake"/>
+
+        <Spinner
+            android:id="@+id/thunderhex_rod_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/thunderhex_rod_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/mounting_plates_intake"
@@ -441,6 +771,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/thunderhex_rod_intake"/>
 
+        <Spinner
+            android:id="@+id/mounting_plates_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/mounting_plates_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/chassis_mount_intake"
             android:layout_width="0dp"
@@ -451,6 +796,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mounting_plates_intake"/>
+
+        <Spinner
+            android:id="@+id/chassis_mount_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/chassis_mount_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/motor_gearbox_intake"
@@ -463,6 +823,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/chassis_mount_intake"/>
 
+        <Spinner
+            android:id="@+id/motor_gearbox_intake_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/motor_gearbox_intake"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/traction_wheels_shooter"
             android:layout_width="0dp"
@@ -473,6 +848,20 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/shooter_title"/>
+
+        <Spinner
+            android:id="@+id/traction_wheels_shooter_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/traction_wheels_shooter"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/neo_motors_shooter"
@@ -485,6 +874,20 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/traction_wheels_shooter"/>
 
+        <Spinner
+            android:id="@+id/neo_motors_shooter_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/neo_motors_shooter"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/motor_mounts_shooter"
             android:layout_width="0dp"
@@ -495,6 +898,20 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/neo_motors_shooter"/>
+
+        <Spinner
+            android:id="@+id/motors_shooter_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/motor_mounts_shooter"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/welds_shooter"
@@ -507,6 +924,20 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/motor_mounts_shooter"/>
 
+        <Spinner
+            android:id="@+id/welds_shooter_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/welds_shooter"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/shooting_plate_shooter"
             android:layout_width="0dp"
@@ -517,6 +948,20 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/welds_shooter"/>
+
+        <Spinner
+            android:id="@+id/shooting_plate_shooter_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/shooting_plate_shooter"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/index_connector_shooter"
@@ -529,6 +974,19 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space"
             app:layout_constraintTop_toBottomOf="@id/shooting_plate_shooter"/>
 
+        <Spinner
+            android:id="@+id/index_connector_shooter_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/index_connector_shooter"/>
+
         <TextView
             android:id="@+id/winch_climber"
             android:layout_width="0dp"
@@ -539,6 +997,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/climber_title"/>
+
+        <Spinner
+            android:id="@+id/winch_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/winch_climber"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/motors_climber"
@@ -551,6 +1024,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/winch_climber"/>
 
+        <Spinner
+            android:id="@+id/motors_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/motors_climber"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/rope_climber"
             android:layout_width="0dp"
@@ -561,6 +1049,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/motors_climber"/>
+
+        <Spinner
+            android:id="@+id/rope_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/rope_climber"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/lower_chassis_mounts_climber"
@@ -573,6 +1076,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/rope_climber"/>
 
+        <Spinner
+            android:id="@+id/lower_chassis_mounts_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/lower_chassis_mounts_climber"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/bearings_climber"
             android:layout_width="0dp"
@@ -583,6 +1101,21 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/lower_chassis_mounts_climber"/>
+
+        <Spinner
+            android:id="@+id/bearings_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/bearings_climber"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/pistons_climber"
@@ -595,6 +1128,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/bearings_climber"/>
 
+        <Spinner
+            android:id="@+id/pistons_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space2"
+            app:layout_constraintEnd_toStartOf="@id/vertical_space"
+            app:layout_constraintTop_toTopOf="@id/pistons_climber"
+            tools:ignore="SpeakableTextPresentCheck" />
+
         <TextView
             android:id="@+id/Versaframe_climber"
             android:layout_width="0dp"
@@ -605,6 +1153,19 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space4"
             app:layout_constraintTop_toBottomOf="@id/climber_title"/>
+
+        <Spinner
+            android:id="@+id/versaframe_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/Versaframe_climber"/>
 
         <TextView
             android:id="@+id/pass_through_hooks_climber"
@@ -617,6 +1178,19 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space4"
             app:layout_constraintTop_toBottomOf="@id/Versaframe_climber"/>
 
+        <Spinner
+            android:id="@+id/pass_through_hooks_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/pass_through_hooks_climber"/>
+
         <TextView
             android:id="@+id/extendable_arms_climber"
             android:layout_width="0dp"
@@ -627,6 +1201,19 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space4"
             app:layout_constraintTop_toBottomOf="@id/pass_through_hooks_climber"/>
+
+        <Spinner
+            android:id="@+id/extendable_arms_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/extendable_arms_climber"/>
 
         <TextView
             android:id="@+id/arm_bearing_blocks_climber"
@@ -639,6 +1226,19 @@
             app:layout_constraintStart_toEndOf="@id/vertical_space4"
             app:layout_constraintTop_toBottomOf="@id/extendable_arms_climber"/>
 
+        <Spinner
+            android:id="@+id/arm_bearing_blocks_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/arm_bearing_blocks_climber"/>
+
         <TextView
             android:id="@+id/sensors_climber"
             android:layout_width="0dp"
@@ -649,6 +1249,19 @@
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/vertical_space4"
             app:layout_constraintTop_toBottomOf="@id/arm_bearing_blocks_climber"/>
+
+        <Spinner
+            android:id="@+id/sensors_climber_dropdown"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:minHeight="20dp"
+            android:spinnerMode="dropdown"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@id/vertical_space3"
+            app:layout_constraintTop_toTopOf="@id/sensors_climber"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
