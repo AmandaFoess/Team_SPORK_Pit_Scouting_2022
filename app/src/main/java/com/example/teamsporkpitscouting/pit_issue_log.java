@@ -23,7 +23,10 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.opencsv.CSVWriter;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -32,10 +35,11 @@ import java.util.Map;
 public class pit_issue_log extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     Button submit_button;
-    EditText issues_found_editText, issues_resolved_editText, unresolved_issues_editText, pit_comments_editText;
-    Switch blank;
+    EditText pit_comments_editText;
     String csv, sensor_index_value, chain_index_value, belts_index_value, pulleys_index_value, motor_index_value, baseplate_index_value, structure_index_value, feeder_rail_index_value, bearings_index_value,  chain_chassis_value, wheel_sprockets_chassis_value, gearboxes_chassis_value, falcon_chassis_value, versaframe_structure_chassis_value, bellypan_chassis_value, intake_slot_chassis_value, fasteners_chassis_value, wheels_chassis_value, bearings_intake_value, mecanum_wheels_intake_value, compliance_wheels_intake_value, spacers_intake_value, thunderhex_rod_intake_value, mounting_plates_intake_value, chassis_mount_intake_value, motor_gearbox_intake_value, traction_wheels_shooter_value, neo_motors_shooter_value, motors_shooter_value, welds_shooter_value, shooting_plate_shooter_value, index_connector_shooter_value, winch_climber_value, motors_climber_value, rope_climber_value, lower_chassis_mounts_climber_value, bearings_climber_value, pistons_climber_value, versaframe_climber_value, pass_through_hooks_climber_value, extendable_arms_climber_value, arm_bearing_blocks_climber_value, sensor_climber_value;
     Spinner sensor_index_spinner, chain_index_spinner, belts_index_spinner, pulleys_index_spinner, motor_index_spinner, baseplate_index_spinner, structure_index_spinner, feeder_rail_index_spinner, bearings_index_spinner,  chain_chassis_spinner, wheel_sprockets_chassis_spinner, gearboxes_chassis_spinner, falcon_chassis_spinner, versaframe_structure_chassis_spinner, bellypan_chassis_spinner, intake_slot_chassis_spinner, fasteners_chassis_spinner, wheels_chassis_spinner, bearings_intake_spinner, mecanum_wheels_intake_spinner, compliance_wheels_intake_spinner, spacers_intake_spinner, thunderhex_rod_intake_spinner, mounting_plates_intake_spinner, chassis_mount_intake_spinner, motor_gearbox_intake_spinner, traction_wheels_shooter_spinner, neo_motors_shooter_spinner, motors_shooter_spinner, welds_shooter_spinner, shooting_plate_shooter_spinner, index_connector_shooter_spinner, winch_climber_spinner, motors_climber_spinner, rope_climber_spinner, lower_chassis_mounts_climber_spinner, bearings_climber_spinner, pistons_climber_spinner, versaframe_climber_spinner, pass_through_hooks_climber_spinner, extendable_arms_climber_spinner, arm_bearing_blocks_climber_spinner, sensor_climber_spinner;
+    String[] array = new String[44];
+    CSVWriter writer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +50,7 @@ public class pit_issue_log extends AppCompatActivity implements View.OnClickList
         submit_button = findViewById(R.id.submit_button);
         submit_button.setOnClickListener(this);
 
-        csv = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/TeamSPORK_Strategy.csv");
+        csv = (Environment.getExternalStorageDirectory().getAbsolutePath() + "/TeamSPORK_Pit_Issue_Log_Pembroke.csv");
 
         List<String> pit_issue_log_list = new ArrayList<>();
         pit_issue_log_list.add("Good");
@@ -89,8 +93,8 @@ public class pit_issue_log extends AppCompatActivity implements View.OnClickList
         feeder_rail_index_spinner.setAdapter(array_adapter_pit_spinner);
 
         bearings_index_spinner = findViewById(R.id.bearings_index_dropdown);
-        chain_index_spinner.setOnItemSelectedListener(this);
-        chain_index_spinner.setAdapter(array_adapter_pit_spinner);
+        bearings_index_spinner.setOnItemSelectedListener(this);
+        bearings_index_spinner.setAdapter(array_adapter_pit_spinner);
 
         chain_chassis_spinner = findViewById(R.id.chain_chassis_dropdown);
         chain_chassis_spinner.setOnItemSelectedListener(this);
@@ -227,8 +231,9 @@ public class pit_issue_log extends AppCompatActivity implements View.OnClickList
         sensor_climber_spinner = findViewById(R.id.sensors_climber_dropdown);
         sensor_climber_spinner.setOnItemSelectedListener(this);
         sensor_climber_spinner.setAdapter(array_adapter_pit_spinner);
-    }
 
+        pit_comments_editText = findViewById(R.id.pit_comments_editText);
+    }
 
     @Override
     public void onClick(View v) {
@@ -236,6 +241,104 @@ public class pit_issue_log extends AppCompatActivity implements View.OnClickList
     }
 
     public void add_pit_issue_log_data() {
+        try {
+            writer = new CSVWriter(new FileWriter(csv, true));
+
+            array[0] = sensor_index_value.trim();
+            array[1] = chain_index_value.trim();
+            array[2] = belts_index_value.trim();
+            array[3] = pulleys_index_value.trim();
+            array[4] = motor_index_value.trim();
+            array[5] = baseplate_index_value.trim();
+            array[6] = structure_index_value.trim();
+            array[7] = feeder_rail_index_value.trim();
+            array[8] = bearings_index_value.trim();
+            array[9] = chain_chassis_value.trim();
+            array[10] = wheel_sprockets_chassis_value.trim();
+            array[11] = gearboxes_chassis_value.trim();
+            array[12] = falcon_chassis_value.trim();
+            array[13] = versaframe_structure_chassis_value.trim();
+            array[14] = bellypan_chassis_value.trim();
+            array[15] = intake_slot_chassis_value.trim();
+            array[16] = fasteners_chassis_value.trim();
+            array[17] = wheels_chassis_value.trim();
+            array[18] = bearings_intake_value.trim();
+            array[19] = mecanum_wheels_intake_value.trim();
+            array[20] = compliance_wheels_intake_value.trim();
+            array[21] = spacers_intake_value.trim();
+            array[22] = thunderhex_rod_intake_value.trim();
+            array[23] = mounting_plates_intake_value.trim();
+            array[24] = chassis_mount_intake_value.trim();
+            array[25] = motor_gearbox_intake_value.trim();
+            array[26] = traction_wheels_shooter_value.trim();
+            array[27] = neo_motors_shooter_value.trim();
+            array[28] = motors_shooter_value.trim();
+            array[29] = welds_shooter_value.trim();
+            array[30] = shooting_plate_shooter_value.trim();
+            array[31] = index_connector_shooter_value.trim();
+            array[32] = winch_climber_value.trim();
+            array[33] = motors_climber_value.trim();
+            array[34] = rope_climber_value.trim();
+            array[35] = lower_chassis_mounts_climber_value.trim();
+            array[36] = bearings_climber_value.trim();
+            array[37] = pistons_climber_value.trim();
+            array[38] = versaframe_climber_value.trim();
+            array[39] = pass_through_hooks_climber_value.trim();
+            array[40] = extendable_arms_climber_value.trim();
+            array[41] = arm_bearing_blocks_climber_value.trim();
+            array[42] = sensor_climber_value.trim();
+            array[43] = pit_comments_editText.getText().toString().trim();
+
+            writer.writeNext(array);
+            writer.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        sensor_index_spinner.setSelection(0);
+        chain_index_spinner.setSelection(0);
+        belts_index_spinner.setSelection(0);
+        pulleys_index_spinner.setSelection(0);
+        motor_index_spinner.setSelection(0);
+        baseplate_index_spinner.setSelection(0);
+        structure_index_spinner.setSelection(0);
+        feeder_rail_index_spinner.setSelection(0);
+        bearings_index_spinner.setSelection(0);
+        chain_chassis_spinner.setSelection(0);
+        wheel_sprockets_chassis_spinner.setSelection(0);
+        gearboxes_chassis_spinner.setSelection(0);
+        falcon_chassis_spinner.setSelection(0);
+        versaframe_structure_chassis_spinner.setSelection(0);
+        bellypan_chassis_spinner.setSelection(0);
+        intake_slot_chassis_spinner.setSelection(0);
+        fasteners_chassis_spinner.setSelection(0);
+        wheels_chassis_spinner.setSelection(0);
+        bearings_intake_spinner.setSelection(0);
+        mecanum_wheels_intake_spinner.setSelection(0);
+        compliance_wheels_intake_spinner.setSelection(0);
+        spacers_intake_spinner.setSelection(0);
+        thunderhex_rod_intake_spinner.setSelection(0);
+        mounting_plates_intake_spinner.setSelection(0);
+        chassis_mount_intake_spinner.setSelection(0);
+        motor_gearbox_intake_spinner.setSelection(0);
+        traction_wheels_shooter_spinner.setSelection(0);
+        neo_motors_shooter_spinner.setSelection(0);
+        motors_shooter_spinner.setSelection(0);
+        welds_shooter_spinner.setSelection(0);
+        shooting_plate_shooter_spinner.setSelection(0);
+        index_connector_shooter_spinner.setSelection(0);
+        winch_climber_spinner.setSelection(0);
+        motors_climber_spinner.setSelection(0);
+        rope_climber_spinner.setSelection(0);
+        lower_chassis_mounts_climber_spinner.setSelection(0);
+        bearings_climber_spinner.setSelection(0);
+        pistons_climber_spinner.setSelection(0);
+        versaframe_climber_spinner.setSelection(0);
+        pass_through_hooks_climber_spinner.setSelection(0);
+        extendable_arms_climber_spinner.setSelection(0);
+        arm_bearing_blocks_climber_spinner.setSelection(0);
+        sensor_climber_spinner.setSelection(0);
+        pit_comments_editText.setText("");
 
     }
 
